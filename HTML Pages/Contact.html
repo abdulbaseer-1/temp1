@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+    <head>
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="shortcut icon" href="../images/header/favicon.ico" type="image/x-icon"> <!--favicon is the icon on the title , it is linked by rel here-->
+        <title>EvoFit</title>
+    </head>
+
+    <header style="margin-bottom: 5%;">
+        <img id="banner" src="../images/header/bg2full1.png" alt="banner2" width="100%" height="auto">
+
+        <a href="../index.html"> <img id="logo" src="../images/header/logo.png" alt="logo" width="17%" height="auto"> </a>
+        <a href="login.html"> <img id="login" src="../images/icons/login.png" alt="login" width="17%" height="auto"> </a>
+        <a href="https://www.linkedin.com/in/abdul-baseer-khan1/" target="_blank"><img id="linkedin-icon" src="../images/icons/linkedin.png" alt="instagram" width="10%" height="auto"> </a>
+        
+        <nav id="navigation">
+            <a href="Workouts.html"> Workouts </a>
+            <a href="Nutrition.html"> Nutrition </a>
+            <a href="Gallery.html"> Gallery </a>
+            <a href="Contact.html"> Contact Us </a>
+        </nav>
+    </header>
+
+    <body>
+        <div class="feedback-form">
+            <h2>Feedback</h2><br><br>
+            <!--the prevent default and widow.location.href methods were learned from chatgpt but the way i did it was learned while learning sdl2 in c++ for game dev(months ago)-->
+            <form onsubmit="event.preventDefault(); window.location.href='reply.html';"> <!--(action="reply.html" method="get")   github pages isnt supporting serverside so i cant do methods etc-->
+                <div class="form-input">
+                    <label for="name">User Name</label>
+                    <input type="text" name="name" id="name" placeholder="Username" required>
+                </div>
+        
+                <div class="form-input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+        
+                <div class="form-input">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="feedback" cols="30" rows="5" placeholder="Your message here..." required></textarea>
+                </div>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </body>
+    
+    <footer id="Contact" style="margin-top: 10%;border-bottom: 30px solid black;">
+        <div id="to_center" align="center">
+            <div id="contact_grid">
+                <div id="website_summary">
+                    <h5>&copy; 2024 EvoFit. All rights reserved.</h5><br>
+                    <p>Your go-to destination for expert health tips, workout routines, and fitness guidance. Stay active, stay healthy, and achieve your wellness goals with our easy-to-follow advice. Always consult a healthcare professional before starting any exercise program. Let's make fitness a lifestyle!</p>
+                </div>
+                <div id="contact_1">
+                    <a href="https://www.instagram.com/khanabdulbaseerkhanyousafzai/" target="_blank"><img src="../images/icons/instagram-2.png" alt="instagram"> <p>instagram</p></a>
+                </div>
+                <div id="contact_2">
+                    <a href="https://github.com/abdulbaseer-1" target="_blank"><img src="../images/icons/github.png" alt="github"> <p>github</p></a>
+                </div>
+                <div id="contact_3">
+                    <a href="mailto:abdulbaseer.s130@gmail.com"><img src="../images/icons/gmail.png" alt="email"> <p>gmail</p></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>

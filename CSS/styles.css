@@ -1,0 +1,534 @@
+:root{
+    background-color: gainsboro;
+    font-size: 16px;
+}
+
+*{ /*general element style*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 7.5vw;
+    font-family:'Times New Roman', Times, serif;
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:3vw;;
+}
+h4{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:2vw;
+}
+h5{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:1.5vw;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    font-size: 1.5vw;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+a:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width : 720px){
+    p{
+        font-size: 2.3vw;
+    }
+    h4{
+        font-size: 2.8vw;
+    }
+    h5{
+        font-size: 2vw;
+    }
+}
+
+
+a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+}
+
+
+header{
+    position: relative;
+    text-align: center;
+    border-bottom: 5.5px solid red;
+}
+#banner{
+    vertical-align: bottom; /*to neglect the whitespace on the bottom of the image*/
+}
+#logo{
+    position: absolute;
+    width: 14%;
+    top:-10.5%;
+    left:0%;
+}
+#logo:hover{ /*this is a hover function studied in class it can be applied to any element*/
+    transform: scale(1.1); /*zoom in on hover*/
+    transition-duration: 200ms;
+}
+#login{
+    position: absolute;
+    top:10%;
+    right:3.5%;
+    width: 6%;
+}
+#login:hover{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+#linkedin-icon{
+    position: absolute;
+    top: 58%;
+    right: 3.9%;
+    width: 4.5%;
+}
+#linkedin-icon:hover{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+
+#navigation{
+    position: absolute;
+    top: 11.6vw;
+    left: 50%; /*The issue i was facing i.e: non dynamic flex was because
+               i had mentioned left:28% so it was alway applied and interfering with my flex*/
+    width: fit-content; /*also not mentioning left or right also interferes, WHY?*/
+    transform: translateX(-50%); /*/ used for centering and found it very useful but not in current slides */
+    margin: 0.5vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#navigation a{
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+    padding: 0.2vw;
+    margin: 0.6vw;
+}
+#navigation a:hover{
+    color: ghostwhite;
+}
+
+
+#landing-content{
+    position:relative;
+    text-align: left;
+    align-content: center;
+    margin-bottom: 7%;
+}
+#landing-content>p{
+    position:absolute;
+    color:azure;
+    top: 35%;
+    left:10%;
+    max-width: 37%;
+}
+
+
+#Workouts{
+    text-align: center;
+    align-content: center; 
+    margin-bottom: 8%; 
+}
+#workout-header-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;/*horizontal allignment*/
+    align-items: center; /*vertical allignment*/
+}
+#workout-header{
+    font-size: 8vw !important;
+    font-family:'Times New Roman', Times, serif;
+    width: 50%;
+}
+#workout-content-thumbnails{
+    display:grid;
+    place-items: center; /* Center both horizontally and vertically*/
+    grid-template-columns: repeat(auto-fit,minmax(30%,1fr));
+    grid-template-rows: repeat(2,minmax(auto,1fr));
+    grid-auto-rows: minmax(auto,1fr);
+    gap: 3vw;
+    max-width: 1000px;
+    margin-top: 4%;
+    /*margin: 0 auto; normally used in centering problems for grids and flex but im okay here*/
+}
+@media screen and (max-width : 720px) {
+    #workout-content-thumbnails{
+        grid-template-columns: repeat(2 ,minmax(100px,1fr));
+        }
+}
+/* #workout-content-thumbnails>div{
+    overflow: hidden;Ensures any overflow is hidden (but is hiding the scaling anim)
+} */
+#workout-content-thumbnails>div>a>img{
+    border: 1px solid transparent;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    height: auto;
+    object-fit: cover;  /* Crop images to fit without distortion*/
+}
+#workout-content-thumbnails>div>a>img:hover{
+    transform: scale(1.1);
+    transition: 250ms; /*learned by chance but awsome trick*/
+}
+#workout-thumbnail{
+    position: relative;
+}
+#workout-thumbnail > h4 > a{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    /*transform function will give us a better centering*/
+    transform: translate(-50%, -50%); /* Center using transform (learned from chatgpt)*/
+    color: azure;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+
+#Health-tips{
+    text-align: center;
+    align-content: center;
+    margin-bottom: 10%; 
+}
+#health-tips-header-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;/*horizontal allignment*/
+    align-items: center; /*vertical allignment*/
+}
+#health-tips-header{
+    font-size: 7.5vw !important;
+    font-family:'Times New Roman', Times, serif;
+}
+#tips-content > div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3vw;
+    padding: 6vw;
+    place-items: center;
+    margin-top: 4%;
+}
+#tips-content > div{
+    border-top: 3px solid black;
+}
+#tips-content > div > div > a > img{
+    border-radius: 5%;
+    height: 90%;
+}
+#tips-content > div > div > a > img:hover{
+    transform: scale(1.15);
+    transition: 250ms;
+}
+
+
+
+#Results {
+    text-align: center;
+    margin-bottom: 10%;
+}
+#results-header-container{
+    text-align: center;
+    display: flex;
+    justify-content: center;/*horizontal allignment*/
+}
+#results-header{
+    font-size: 8vw !important;
+    font-family:'Times New Roman', Times, serif;
+}
+#result-content{
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 4fr 4fr; /*//grid auto rows was causing the narrow grid row issue*/
+    place-items: center;
+    padding: 3%;
+}
+#result-2>img{
+    width: 120%;
+}
+
+
+#Contact {
+    border-top: 30px solid black; 
+    width: 100%;
+    margin: 0 auto; /* Centers the #Contact container horizontally // very important only thing missing and was causing errors*/
+    text-align: center;
+    background-color: darkgray;
+
+}
+#to_center{
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+}
+#contact_grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    place-items: center;
+
+    grid-template-areas: 
+    "s a"
+    "s b"
+    "s c";
+}
+#contact_grid > div{
+    padding: 2%;
+}
+#website_summary {
+    grid-area: s;
+    max-width: 100%;
+}
+
+#contact_1 {
+    grid-area: a;
+}
+
+#contact_2 {
+    grid-area: b;
+}
+#contact_3 > a > img{
+    grid-area: c;
+}
+
+#contact_1 > a > img{
+    width: 15%;
+}
+#contact_2> a > img {
+    width: 15%;
+}
+#contact_3> a > img {
+    width: 10%;
+}
+
+
+
+/*  -----------------------GALLERY CSS----------------------------------------------------*/
+
+#success-stories{
+    text-align: center;
+}
+#success-stories > h1{
+    margin-bottom: 7%;
+}
+#success-stories > h2{
+    margin-top: 2%;
+    font-size: 1.7rem;
+    margin-bottom: 2%;
+}
+#success-stories > div{
+    display: flex;
+    justify-content: center;
+    padding: 1.5vw;
+    margin-bottom: 8%;
+}
+
+#success-stories > div > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    place-items: center;
+    grid-template-areas: 
+        "i i t t t t";
+
+    width: 100%;
+    padding-top: 4%;
+    border-top: 3px solid black;
+}
+.success-image {
+    grid-area: i;
+    width: 100%;
+    height: auto;
+    display: flex; /*centers my image beter but dont understand why, im already placing items in center in te grid*/
+    justify-content: center;
+}
+.success-image > img {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+.success-story {
+    grid-area: t;
+    padding: 2vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column; /*my story has a heading and a para so use flex to arrange*/
+    align-content: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+.success-story > h3 {
+    font-size: 3vw;
+}
+#story3{
+    margin-bottom: 0% !important;
+}
+
+/*  -----------------------Nutrition CSS----------------------------------------------------*/
+
+
+/*  -----------------------subpage landing content CSS----------------------------------------------------*/
+#subpage-landing-content{
+    position:relative;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 7%;
+}
+#subpage-landing-content-inside {
+    position:absolute;
+    color: whitesmoke;
+    top: 0%;
+    left:0%;
+}
+
+/*----------------------------Contact page CSS---------------------------*/
+
+.feedback-form {
+    max-width: 450px;
+    margin: 0 auto; /*as mentioned above for centering*/
+    padding: 2%;
+    background-color: rgba(136, 163, 198, 0.769);
+    border-radius: 20px;
+}
+.feedback-form > h2{
+    place-self: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    margin-bottom: 3%;
+}
+
+.form-input > label {
+    font-weight: bold;
+    margin-bottom: 0.7rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.2rem;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 7px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+button {
+    padding: 0.75rem;
+    border: none;
+    background-color: rgb(99, 135, 44);
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
+/*----------------------Workout Subpages CSS------------------------*/
+
+.subpage_workout_content {
+    max-width: 1000px;
+    margin: 0 auto; /*centering*/
+    padding: 2rem 1rem; /*top bottom , learned in class today*/
+    text-align: center;
+
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 30px;
+}
+
+#workout_video {
+    margin-top: 10%;
+    width: 90%;
+    position: relative;
+    padding-bottom: 56.35%; /*help taken from online sources in iframe adjustment*/
+    height: 0; /*height adjustment is not going smoothly so the trick is
+               to just position the video frame and then adjust the height of the video
+                at that position*/
+}
+
+#workout_video > iframe {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.workout_written {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px; /*WHY DO pixels give better border radius for pictures and text borders?*/
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /*learned today in class*/
+}
+
+.subpage_workout_content > h1 {
+    font-size: 7vw; /*rem is not resizing properly so using %*/
+    margin-bottom: 1.5rem;
+    justify-self: center;
+}
+
+.workout_written > h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.workout_written > p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.workout_written > ul {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+.workout_written > ol {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
+
+/*
+NOTES (myself):
+-> Relating to images and bounded items: 
+   o) always mention the width and height for proper dimensions
+   o
+
+-> Relating to alignments:
+   o) align-content: center;  vertical allign
+   o) justify-content: center; horizontal align
+
+-> Relating to rows and colums (grid/flex)
+   o) direction -> column -> vertical placing
+   o) direction -> row -> horizontal placing
+*/
